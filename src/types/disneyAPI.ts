@@ -15,3 +15,19 @@ export type DisneyCharacter = {
 	url: string;
 	__v: number;
 };
+
+export type APIAnswerInfo = {
+	count: number;
+	totalPages: number;
+	previousPage: null | string;
+	nextPage: null | string;
+};
+
+export type APIAnswerData = {
+	data: DisneyCharacter[];
+};
+
+export type APIAnswer = {
+	info: APIAnswerInfo;
+	data: APIAnswerData;
+};
