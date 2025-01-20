@@ -1,4 +1,5 @@
 import { DisneyCharacter } from "../../types/disneyAPI";
+import createCharacterCard from "../CharacterCard/CharacterCard";
 import "./CharacterList.scss";
 
 type CharacterList = {
@@ -15,8 +16,13 @@ const createCharacterList = () => {
 	const renderCharList = () => {
 		if (charList.characters) {
 			div.innerHTML = `<h2>Search result:</h2>`;
+			const wrapper = document.createElement("div");
+			div.appendChild(wrapper);
+			wrapper.classList.add("char-wrapper");
+
 			charList.characters.forEach((character) => {
-				div.innerHTML += `<p>${character.name}</p>`;
+				if (character.films.length > 0)
+					wrapper.appendChild(createCharacterCard(character));
 			});
 		}
 	};

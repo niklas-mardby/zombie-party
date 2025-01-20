@@ -1,0 +1,17 @@
+.CharacterCard {
+	border: 2px solid lightgreen;
+	background-color: skyblue;
+	padding: 1rem;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	p {
+		font-weight: 700;
+	}
+
+	img {
+		max-width: 7rem;
+	}
+}
