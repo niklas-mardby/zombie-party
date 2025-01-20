@@ -1,5 +1,6 @@
 // här hanterar vi vårt globala state
 
+import { DisneyCharacter } from "../types/disneyAPI";
 import { Zombie } from "../types/zombies";
 
 export const zombieState: Zombie[] = [
@@ -12,7 +13,11 @@ export const addZombie = (z: Zombie) => {
 	zombieState.push(z);
 };
 
-// export const addFavouriteCharacter = (
-// 	characterName: string,
-// 	zombieName: string
-// ) => {};
+export const addFavouriteCharacter = (
+	character: DisneyCharacter,
+	zombieName: string
+) => {
+	zombieState.forEach((z) => {
+		if (z.name === zombieName) z.favouriteDisneyCharacter = character;
+	});
+};
