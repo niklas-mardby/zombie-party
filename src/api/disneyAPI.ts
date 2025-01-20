@@ -8,5 +8,6 @@ export const searchDisneyCharacterByName = async (
 	);
 	const data = (await response.json()) as APIAnswer;
 
-	return data.data;
+	if (Array.isArray(data.data)) return data.data;
+	else return [data.data];
 };
