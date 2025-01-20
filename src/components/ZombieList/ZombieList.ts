@@ -3,7 +3,7 @@ import "./ZombieList.scss";
 
 const createZombieList = () => {
 	const div = document.createElement("div");
-	div.innerHTML = `<h1>Choose Zombies</h1>`;
+	div.innerHTML = `<h1>Choose Zombie</h1>`;
 	const ul = document.createElement("ul");
 
 	zombieState.forEach((zombie) => {
