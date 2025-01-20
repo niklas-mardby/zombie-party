@@ -1,6 +1,12 @@
-export const searchDisneyCharacter = () => {
-	return "something";
-};
+import { APIAnswer, DisneyCharacter } from "../types/disneyAPI";
 
-// TODO: skriv klart sökfunktionen använd endpoint https://api.disneyapi.dev/character?name=peter
-// alla mina endpoints vill finnas med i denna filen i ngn form
+export const searchDisneyCharacterByName = async (
+	name: string
+): Promise<DisneyCharacter[]> => {
+	const response = await fetch(
+		`https://api.disneyapi.dev/character?name=${name}`
+	);
+	const data = (await response.json()) as APIAnswer;
+
+	return data.data;
+};
