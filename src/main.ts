@@ -5,8 +5,7 @@ import "./style.scss";
 
 const main = document.querySelector("main") as HTMLDivElement;
 
-// lägg till alla fyra komponenter i main?
-
-main.append(createCharacterSearchForm());
 main.append(createZombieForm());
 main.append(createZombieList());
+
+main.append(createCharacterSearchForm());
