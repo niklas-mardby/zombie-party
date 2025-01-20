@@ -16,6 +16,8 @@ const createCharacterSearchForm = () => {
 
 	const handleSearchClick = async () => {
 		if (inputField.value) {
+			characterList.showLoader();
+
 			const searchWord = inputField.value;
 			inputField.value = "";
 			inputField.focus();

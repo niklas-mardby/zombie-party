@@ -5,12 +5,12 @@ import "./CharacterList.scss";
 type CharacterList = {
 	element: HTMLDivElement;
 	render: () => void;
+	showLoader: () => void;
 	characters: DisneyCharacter[];
 };
 
 const createCharacterList = () => {
 	const div = document.createElement("div");
-	div.innerHTML = `test`;
 	div.classList.add("CharacterList");
 
 	const renderCharList = () => {
@@ -27,9 +27,14 @@ const createCharacterList = () => {
 		}
 	};
 
+	const showLoader = () => {
+		div.innerHTML = `<h2>Searching...</h2><p class="hourglass"></p>`;
+	};
+
 	const charList: CharacterList = {
 		element: div,
 		render: renderCharList,
+		showLoader: showLoader,
 		characters: [],
 	};
 
