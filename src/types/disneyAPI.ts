@@ -23,11 +23,7 @@ export type APIAnswerInfo = {
 	nextPage: null | string;
 };
 
-export type APIAnswerData = {
-	data: DisneyCharacter[];
-};
-
 export type APIAnswer = {
 	info: APIAnswerInfo;
-	data: APIAnswerData;
+	data: DisneyCharacter[];
 };
