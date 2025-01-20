@@ -4,9 +4,24 @@ import { DisneyCharacter } from "../types/disneyAPI";
 import { Zombie } from "../types/zombies";
 
 export const zombieState: Zombie[] = [
-	{ name: "Bob", speed: "normal", favouriteDisneyCharacter: null },
-	{ name: "Stina", speed: "fast", favouriteDisneyCharacter: null },
-	{ name: "Kim", speed: "slow", favouriteDisneyCharacter: null },
+	{
+		name: "Bob",
+		speed: "normal",
+		chosen: false,
+		favouriteDisneyCharacter: null,
+	},
+	{
+		name: "Stina",
+		speed: "fast",
+		chosen: false,
+		favouriteDisneyCharacter: null,
+	},
+	{
+		name: "Kim",
+		speed: "slow",
+		chosen: false,
+		favouriteDisneyCharacter: null,
+	},
 ];
 
 export const addZombie = (z: Zombie) => {
@@ -19,5 +34,11 @@ export const addFavouriteCharacter = (
 ) => {
 	zombieState.forEach((z) => {
 		if (z.name === zombieName) z.favouriteDisneyCharacter = character;
+	});
+};
+
+export const unchooseZombies = () => {
+	zombieState.forEach((z) => {
+		z.chosen = false;
 	});
 };

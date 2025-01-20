@@ -1,18 +1,24 @@
 @use "./styles/mixin";
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: lightblue;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
-	border: 2px solid darkgreen;
-	@include mixin.layout-margin;
+	@include mixin.borderstyle(green);
+	@include mixin.margin-padding;
 }
 
 footer {
-	border: 2px solid green;
-	@include mixin.layout-margin;
+	@include mixin.borderstyle(green);
+	@include mixin.margin-padding;
 }
 
 main {

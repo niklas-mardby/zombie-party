@@ -1,4 +1,30 @@
 .ZombieList {
 	border: 2px solid lime;
 	padding: 1rem;
+
+	li {
+		padding: 0.3rem;
+		max-width: 100px;
+		border-radius: 7px;
+		margin: 0.2rem;
+
+		label {
+			display: block;
+			padding: 0.3rem;
+		}
+
+		&:hover {
+			background-color: rgb(251, 113, 63);
+			cursor: pointer;
+		}
+
+		input[type="radio"] {
+			display: none;
+		}
+	}
+
+	li:has(input[type="radio"]:checked) {
+		background-color: orangered;
+		font-weight: 600;
+	}
 }

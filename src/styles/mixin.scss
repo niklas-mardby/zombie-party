@@ -1,4 +1,13 @@
-@mixin layout-margin {
+@mixin margin-padding {
 	margin: 1rem;
 	padding: 1rem;
+}
+
+@mixin mainchild-margin-padding {
+	padding: 1rem;
+}
+
+@mixin borderstyle($color) {
+	border: 3px solid $color;
+	border-radius: 7px;
 }

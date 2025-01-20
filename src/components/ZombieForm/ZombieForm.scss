@@ -1,4 +1,6 @@
+@use "../../styles/mixin.scss";
+
 .ZombieForm {
+	@include mixin.mainchild-margin-padding;
 	background-color: aquamarine;
-	padding: 1rem;
 }

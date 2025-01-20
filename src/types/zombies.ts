@@ -8,5 +8,6 @@ export type ZombieSpeed = keyof typeof speeds;
 export type Zombie = {
 	name: string;
 	speed: ZombieSpeed;
+	chosen: boolean;
 	favouriteDisneyCharacter: DisneyCharacter | null;
 };

@@ -1,14 +1,22 @@
-import { zombieState } from "../../state/state";
+import { unchooseZombies, zombieState } from "../../state/state";
 import "./ZombieList.scss";
 
 const createZombieList = () => {
 	const div = document.createElement("div");
-	div.innerHTML = `<h1>Zombies</h1>`;
+	div.innerHTML = `<h1>Choose Zombies</h1>`;
 	const ul = document.createElement("ul");
 
 	zombieState.forEach((zombie) => {
 		const li = document.createElement("li");
-		li.textContent = zombie.name;
+		li.innerHTML = `<label><input type="radio" name="chosen" ${
+			zombie.chosen ? "checked" : ""
+		}/>${zombie.name}</label>`;
+
+		li.addEventListener("click", () => {
+			unchooseZombies();
+			zombie.chosen = true;
+		});
+
 		ul.append(li);
 	});
 
