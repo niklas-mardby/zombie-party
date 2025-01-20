@@ -1,4 +1,5 @@
 import { searchDisneyCharacterByName } from "../../api/disneyAPI";
+import createCharacterList from "../CharacterList/CharacterList";
 import "./CharacterSearchForm.scss";
 
 const createCharacterSearchForm = () => {
@@ -11,6 +12,8 @@ const createCharacterSearchForm = () => {
 	const searchButton = document.createElement("button");
 	searchButton.textContent = "Search";
 
+	const characterList = createCharacterList();
+
 	const handleSearchClick = async () => {
 		if (inputField.value) {
 			const searchWord = inputField.value;
@@ -19,6 +22,9 @@ const createCharacterSearchForm = () => {
 
 			const data = await searchDisneyCharacterByName(searchWord);
 			console.log(data);
+
+			characterList.characters = data;
+			characterList.render();
 		}
 	};
 
@@ -26,6 +32,7 @@ const createCharacterSearchForm = () => {
 
 	divForm.appendChild(inputField);
 	divForm.appendChild(searchButton);
+	divForm.appendChild(characterList.element);
 
 	return divForm;
 };
