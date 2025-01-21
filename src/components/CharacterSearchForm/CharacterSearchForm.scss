@@ -1,6 +1,10 @@
+@use "../../styles/mixin.scss";
+
 .CharacterSearchForm {
-	background-color: aqua;
+	background-color: skyblue;
 	padding: 1rem;
+	margin: 1rem;
+	@include mixin.borderstyle(rgb(97, 197, 236));
 
 	button {
 		border: 2px solid darkblue;

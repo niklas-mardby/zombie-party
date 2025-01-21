@@ -1,4 +1,6 @@
+import { createDiv } from "../../helpers/helpers";
 import { unchooseZombies, zombieState } from "../../state/state";
+import createZombieCard from "../ZombieCard/ZombieCard";
 import "./ZombieList.scss";
 
 const createZombieList = () => {
@@ -6,7 +8,11 @@ const createZombieList = () => {
 	div.innerHTML = `<h1>Choose Zombie</h1>`;
 	const ul = document.createElement("ul");
 
+	//let card = createDiv("");
+
 	zombieState.forEach((zombie) => {
+		//if (zombie.chosen) card = createZombieCard(zombie);
+
 		const li = document.createElement("li");
 		li.innerHTML = `<label><input type="radio" name="chosen" ${
 			zombie.chosen ? "checked" : ""
@@ -21,7 +27,9 @@ const createZombieList = () => {
 	});
 
 	div.append(ul);
+	//div.append(card);
 	div.classList.add("ZombieList");
+
 	return div;
 };
 

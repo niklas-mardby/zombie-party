@@ -7,6 +7,7 @@
 }
 
 body {
+	margin: 0;
 	background-color: lightblue;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,10 +20,6 @@ nav {
 footer {
 	@include mixin.borderstyle(green);
 	@include mixin.margin-padding;
-}
-
-main {
-	margin: 1rem;
 }
 
 p.hourglass {

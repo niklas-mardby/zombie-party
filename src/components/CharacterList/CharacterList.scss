@@ -1,10 +1,14 @@
+@use "../../styles/mixin.scss";
+
 .CharacterList {
-	border: 2px solid lime;
+	@include mixin.borderstyle(lightblue);
 	background-color: lightblue;
 	padding: 1rem;
+	margin-top: 1.3rem;
 
 	.char-wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		gap: 1.3rem;
 	}
 }
