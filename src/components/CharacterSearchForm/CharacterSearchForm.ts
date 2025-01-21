@@ -25,6 +25,7 @@ const createCharacterSearchForm = () => {
 			const data = await searchDisneyCharacterByName(searchWord);
 			console.log(data);
 
+			characterList.search = searchWord;
 			characterList.characters = data;
 			characterList.render();
 		}

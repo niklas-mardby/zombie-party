@@ -3,6 +3,7 @@ import createCharacterCard from "../CharacterCard/CharacterCard";
 import "./CharacterList.scss";
 
 type CharacterList = {
+	search: string | null;
 	element: HTMLDivElement;
 	render: () => void;
 	showLoader: () => void;
@@ -15,7 +16,9 @@ const createCharacterList = () => {
 
 	const renderCharList = () => {
 		if (charList.characters) {
-			div.innerHTML = `<h2>Search result:</h2>`;
+			div.innerHTML = `<h2>Search result${
+				charList.search ? ` for "${charList.search}"` : ""
+			}:</h2>`;
 			const wrapper = document.createElement("div");
 			div.appendChild(wrapper);
 			wrapper.classList.add("char-wrapper");
@@ -32,6 +35,7 @@ const createCharacterList = () => {
 	};
 
 	const charList: CharacterList = {
+		search: null,
 		element: div,
 		render: renderCharList,
 		showLoader: showLoader,
