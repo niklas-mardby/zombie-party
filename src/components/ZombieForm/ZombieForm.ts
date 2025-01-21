@@ -1,3 +1,4 @@
+import { speeds } from "../../constants/constants";
 import "./ZombieForm.scss";
 
 const createZombieForm = () => {
@@ -5,10 +6,9 @@ const createZombieForm = () => {
 	div.innerHTML = `
         <h1>Add zombie</h1>
         Name: <input type="text">
-        Speed: <select>
-            <option>a</option>
-            <option>b</option>
-            <option>c</option>
+        Speed: <select>${Object.keys(speeds).map(
+				(x) => `<option>${x}</option>`
+			)}
         </select>
         <button>Add</button>
     `;
