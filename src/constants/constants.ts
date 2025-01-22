@@ -1,7 +1,9 @@
 // en fil med alla mina konstanter
 
 export enum speeds {
-	fast = "fast",
-	normal = "normal",
 	slow = "slow",
+	normal = "normal",
+	fast = "fast",
 }
+
+// TODO: add another enum with different types of zombies

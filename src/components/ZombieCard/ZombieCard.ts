@@ -11,3 +11,5 @@ const createZombieCard = (z: Zombie) => {
 };
 
 export default createZombieCard;
+
+// TODO: create this card (the above code is only placeholder stuff)
