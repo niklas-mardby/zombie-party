@@ -8,20 +8,20 @@ export const zombieState: Zombie[] = [
 	{
 		name: "Bob",
 		speed: "normal",
-		chosen: false,
-		favouriteDisneyCharacter: null,
+		chosen: true,
+		favouriteDisneyCharacter: [],
 	},
 	{
 		name: "Stina",
 		speed: "fast",
 		chosen: false,
-		favouriteDisneyCharacter: null,
+		favouriteDisneyCharacter: [],
 	},
 	{
 		name: "Kim",
 		speed: "slow",
 		chosen: false,
-		favouriteDisneyCharacter: null,
+		favouriteDisneyCharacter: [],
 	},
 ];
 
@@ -34,7 +34,7 @@ export const addFavouriteCharacter = (
 	zombieName: string
 ) => {
 	zombieState.forEach((z) => {
-		if (z.name === zombieName) z.favouriteDisneyCharacter = character;
+		if (z.name === zombieName) z.favouriteDisneyCharacter.push(character);
 	});
 };
 

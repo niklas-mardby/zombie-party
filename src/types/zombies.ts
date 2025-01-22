@@ -9,5 +9,5 @@ export type Zombie = {
 	name: string;
 	speed: ZombieSpeed;
 	chosen: boolean;
-	favouriteDisneyCharacter: DisneyCharacter | null;
+	favouriteDisneyCharacter: DisneyCharacter[];
 };
