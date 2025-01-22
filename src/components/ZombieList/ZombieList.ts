@@ -9,12 +9,14 @@ const createZombieList = () => {
 	const wrapper = createDiv("zombieWrapper");
 
 	const div = document.createElement("div");
-	div.innerHTML = `<h1>Choose Zombie</h1>`;
+	div.innerHTML = `<h2>Choose Zombie</h2>`;
 	const ul = document.createElement("ul");
 
 	let z: Zombie = emptyZombie();
 
 	zombieState.forEach((zombie) => {
+		if (zombie.chosen) z = zombie;
+
 		const li = document.createElement("li");
 		li.innerHTML = `<label><input type="radio" name="chosen" ${
 			zombie.chosen ? "checked" : ""

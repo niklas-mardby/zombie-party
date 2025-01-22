@@ -11,9 +11,15 @@ const createZombieCard = (z: Zombie | null) => {
 	const div = createDiv("ZombieCard");
 
 	div.innerHTML = `
-		<h3>Name: ${z.name}</h3>
+		<h2>Name: ${z.name}</h2>
 		<p>Speed: ${z.name === "-" ? "-" : z.speed}</p>`;
-	// TODO: visa upp favorit-disney-karaktär också
+	// TODO: visa upp favorit-disney-karaktärer också
+
+	if (z.favouriteDisneyCharacter.length > 0) {
+		div.innerHTML += "<p>Favourite characters: inte tom</p>";
+	} else {
+		div.innerHTML += "<p>Favourite characters: none</p>";
+	}
 
 	return div;
 };
