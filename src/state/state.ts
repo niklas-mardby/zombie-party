@@ -2,6 +2,7 @@
 
 import { DisneyCharacter } from "../types/disneyAPI";
 import { Zombie } from "../types/zombies";
+import { emptyZombie } from "../utils/zombieUtils";
 
 export const zombieState: Zombie[] = [
 	{
@@ -41,4 +42,13 @@ export const unchooseZombies = () => {
 	zombieState.forEach((z) => {
 		z.chosen = false;
 	});
+};
+
+export const getChosenZombie = () => {
+	let chosenZombie: Zombie = emptyZombie();
+
+	zombieState.forEach((z) => {
+		if (z.chosen) chosenZombie = z;
+	});
+	return chosenZombie;
 };

@@ -6,4 +6,4 @@ export enum speeds {
 	fast = "fast",
 }
 
-// TODO: add another enum with different types of zombies
+// TODO: add another enum with different types of zombies? or some other info for the zombies
