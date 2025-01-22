@@ -28,5 +28,3 @@ export const renderZombieCard = (z: Zombie) => {
 		p.replaceChild(createZombieCard(z), div);
 	}
 };
-
-// TODO: create this card (the above code is only placeholder stuff)
