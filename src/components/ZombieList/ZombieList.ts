@@ -32,7 +32,7 @@ export const renderZombieList = () => {
 	const div = document.querySelector(".ZombieList") as HTMLDivElement;
 
 	if (div) {
-		div.remove();
-		createZombieList();
+		const p = div.parentElement as HTMLDivElement;
+		p.replaceChild(createZombieList(), div);
 	}
 };
