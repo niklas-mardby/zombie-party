@@ -4,7 +4,7 @@ export const emptyZombie = () => {
 	const z: Zombie = {
 		name: "-",
 		speed: "slow",
-		favouriteDisneyCharacter: null,
+		favouriteDisneyCharacter: [],
 		chosen: false,
 	};
 	return z;

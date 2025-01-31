@@ -6,7 +6,7 @@ import "./ZombieForm.scss";
 
 const createZombieForm = () => {
 	const div = document.createElement("div");
-	div.innerHTML = `<h1>Add zombie</h1>`;
+	div.innerHTML = `<h2>Add zombie</h2>`;
 	const zombieName = document.createElement("input");
 	zombieName.type = "text";
 	div.append("Name: ", zombieName);
@@ -20,16 +20,16 @@ const createZombieForm = () => {
 	const button = document.createElement("button");
 	button.innerText = "Add";
 	button.addEventListener("click", () => {
-		console.log(zombieName.value);
-		console.log(zombieSpeed.value);
-
-		addZombie({
-			name: zombieName.value,
-			speed: zombieSpeed.value as ZombieSpeed,
-			chosen: false,
-			favouriteDisneyCharacter: null,
-		});
-		renderZombieList();
+		if (zombieName.value) {
+			addZombie({
+				name: zombieName.value,
+				speed: zombieSpeed.value as ZombieSpeed,
+				chosen: false,
+				favouriteDisneyCharacter: [],
+			});
+			renderZombieList();
+			zombieName.value = "";
+		}
 	});
 	div.append(button);
 	div.classList.add("ZombieForm");

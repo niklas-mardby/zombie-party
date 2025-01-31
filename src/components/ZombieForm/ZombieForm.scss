@@ -1,6 +1,43 @@
 @use "../../styles/mixin.scss";
 
+$border-color: green;
+
 .ZombieForm {
 	@include mixin.mainchild-margin-padding;
 	background-color: aquamarine;
+	font-size: large;
+
+	button {
+		@include mixin.borderstyle($border-color);
+		background-color: lightgreen;
+		margin: 0.2rem;
+		padding: 0.4rem;
+		font-size: large;
+		cursor: pointer;
+
+		&:hover {
+			box-shadow: 0px 7px 10px -5px #0057ab;
+			transform: scale(1.03);
+		}
+
+		&:active {
+			transform: scale(0.9);
+		}
+	}
+
+	input {
+		@include mixin.borderstyle($border-color);
+		background-color: rgb(200, 239, 200);
+		margin: 0.2rem;
+		padding: 0.4rem;
+		font-size: large;
+	}
+
+	select {
+		@include mixin.borderstyle($border-color);
+		background-color: rgb(200, 239, 200);
+		margin: 0.2rem;
+		padding: 0.4rem;
+		font-size: large;
+	}
 }
